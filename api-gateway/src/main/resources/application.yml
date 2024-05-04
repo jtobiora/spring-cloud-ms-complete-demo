@@ -1,0 +1,25 @@
+server:
+  port: 9193
+
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  config:
+    import: optional:configserver:http://localhost:9194
+  cloud:
+    gateway:
+      routes:
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order/**
+        - id: payment-service
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/**
+

@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: CONFIG-SERVER
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    config:
+      server:
+        git:
+          username: jtobiora
+          password: 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
+          uri: https://github.com/jtobiora/cloud-config-demo
+          skip-ssl-validation: true
+
+server:
+  port: 9194
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

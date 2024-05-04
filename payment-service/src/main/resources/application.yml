@@ -1,0 +1,21 @@
+server:
+  port: 9191
+spring:
+  h2:
+    console:
+      enabled: true
+  application:
+    name: PAYMENT-SERVICE
+  config:
+    import: optional:configserver:http://localhost:9194
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+logging:
+  file:
+    name: C:/Users/HP/Documents/ps.log
+
+
+
