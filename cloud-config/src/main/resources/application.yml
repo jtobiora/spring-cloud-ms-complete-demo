@@ -11,7 +11,7 @@ spring:
       server:
         git:
           username: jtobiora
-        #   password: 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
+          password: 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
           uri: https://github.com/jtobiora/cloud-config-demo
           skip-ssl-validation: true
 
